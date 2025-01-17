@@ -9,12 +9,14 @@ E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\client\ob
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\client\obj\Debug\client.xml
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\client\obj\Debug\client.pdb
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\bin\Debug\client.exe.config
-E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.exe
-E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.xml
-E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.pdb
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\bin\Debug\client.exe
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\bin\Debug\client.pdb
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\bin\Debug\client.xml
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.Form1.resources
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.Resources.resources
 E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.vbproj.GenerateResource.Cache
+E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.exe
+E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.xml
+E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.pdb
+E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.MainForm.resources
+E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\obj\Debug\client.LoadingForm.resources
