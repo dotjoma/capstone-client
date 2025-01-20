@@ -46,11 +46,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\Joma\Downloads\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -71,6 +78,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\AppConfig.vb" />
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +86,61 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuV2.Designer.vb">
+      <DependentUpon>MainMenuV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu\HomeForm.Designer.vb">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu\HomeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu\InventoryForm.Designer.vb">
+      <DependentUpon>InventoryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu\InventoryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POSForm.Designer.vb">
+      <DependentUpon>POSForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POSForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POS\OrderForm.Designer.vb">
+      <DependentUpon>OrderForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POS\OrderForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\POS\ProductForm.Designer.vb">
+      <DependentUpon>ProductForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\POS\ProductForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\Logger.vb" />
+    <Compile Include="Models\Product.vb" />
+    <Compile Include="Models\ProductCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\ProductDisplay.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -111,8 +169,32 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuV2.resx">
+      <DependentUpon>MainMenuV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu\HomeForm.resx">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu\InventoryForm.resx">
+      <DependentUpon>InventoryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POSForm.resx">
+      <DependentUpon>POSForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POS\OrderForm.resx">
+      <DependentUpon>OrderForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\POS\ProductForm.resx">
+      <DependentUpon>ProductForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\ProductCard.resx">
+      <DependentUpon>ProductCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -137,15 +219,38 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icons\Back Arrow.png" />
     <Content Include="Resources\Icons\Bank.png" />
+    <Content Include="Resources\Icons\Cardboard Box.png" />
+    <Content Include="Resources\Icons\Close.png" />
     <Content Include="Resources\Icons\Cutlery.png" />
+    <Content Include="Resources\Icons\Eye.png" />
+    <Content Include="Resources\Icons\EyeY.png" />
+    <Content Include="Resources\Icons\Hide.png" />
+    <Content Include="Resources\Icons\HideY.png" />
+    <Content Include="Resources\Icons\Home.png" />
+    <Content Include="Resources\Icons\HomeFBR.png" />
+    <Content Include="Resources\Icons\HomeOBR.png" />
+    <Content Include="Resources\Icons\Horizontal Line.png" />
+    <Content Include="Resources\Icons\Key.png" />
+    <Content Include="Resources\Icons\Meal.png" />
+    <Content Include="Resources\Icons\Shopping BagBR.png" />
+    <Content Include="Resources\Icons\Shopping BagFBR.png" />
+    <Content Include="Resources\Icons\Shopping Cart.png" />
+    <Content Include="Resources\Icons\Shopping Cart48.png" />
+    <Content Include="Resources\Icons\Shopping CartFBR.png" />
+    <Content Include="Resources\Icons\Typewriter With Tablet.png" />
     <Content Include="Resources\Icons\User Account.png" />
+    <Content Include="Resources\Icons\User Group.png" />
+    <Content Include="Resources\Icons\User.png" />
+    <Content Include="Resources\Icons\UserBR.png" />
+    <Content Include="Resources\Images\ramen.png" />
     <Content Include="Resources\Logo\logo-no-bg.png" />
     <Content Include="Resources\Logo\logo.png" />
     <Content Include="Resources\Icons\Shopping Bag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Folder Include="Validation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

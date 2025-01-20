@@ -2,6 +2,7 @@
 Imports System.Net
 Imports System.Net.Sockets
 Imports System.Configuration
+Imports System.Threading
 Module TcpConnection
     Private client As TcpClient
     Private serverIp As String = ConfigurationManager.AppSettings("ServerIp")
@@ -13,6 +14,7 @@ Module TcpConnection
         Try
             client = New TcpClient(serverIp, serverPort) ' Connect to the server
             AppendTextToConsole(rtb, "Connected to server.")
+
             ' Send a message to the server
             Dim message As String = "Ping!"
             Dim data As Byte() = Encoding.ASCII.GetBytes(message)
@@ -28,6 +30,9 @@ Module TcpConnection
 
         Catch ex As Exception
             AppendTextToConsole(rtb, "Error: " & ex.Message)
+            MsgBox("A connection could not be established. A complete log can be found in the log file.", MsgBoxStyle.Critical, "Error")
+            Logger.LogError(ex.Message.ToString())
+            Application.Exit()
         Finally
             GC.Collect()
             Form1.Cursor = Cursors.Default
@@ -48,6 +53,7 @@ Module TcpConnection
             If client IsNot Nothing Then
                 client.Close() ' Close the TcpClient
                 client = Nothing ' Set client to Nothing
+
                 AppendTextToConsole(rtb, "Disconnected from server.")
             End If
         Catch ex As Exception

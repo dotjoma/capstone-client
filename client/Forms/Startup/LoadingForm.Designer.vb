@@ -35,7 +35,6 @@ Partial Class LoadingForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -43,8 +42,7 @@ Partial Class LoadingForm
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -55,11 +53,11 @@ Partial Class LoadingForm
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(191, 22)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
@@ -76,13 +74,14 @@ Partial Class LoadingForm
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 345)
+        Me.Panel1.Location = New System.Drawing.Point(0, 307)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(532, 26)
         Me.Panel1.TabIndex = 2
         '
         'lblYear
         '
+        Me.lblYear.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblYear.AutoSize = True
         Me.lblYear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.lblYear.Location = New System.Drawing.Point(171, 5)
@@ -93,6 +92,7 @@ Partial Class LoadingForm
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(211, 5)
@@ -103,6 +103,7 @@ Partial Class LoadingForm
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(150, 5)
@@ -113,6 +114,7 @@ Partial Class LoadingForm
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(113, 230)
@@ -123,6 +125,7 @@ Partial Class LoadingForm
         '
         'Panel7
         '
+        Me.Panel7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.Panel7.Controls.Add(Me.PictureBox7)
         Me.Panel7.Location = New System.Drawing.Point(105, 169)
@@ -142,6 +145,7 @@ Partial Class LoadingForm
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(203, 230)
@@ -152,6 +156,7 @@ Partial Class LoadingForm
         '
         'Panel2
         '
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Location = New System.Drawing.Point(191, 169)
@@ -169,11 +174,9 @@ Partial Class LoadingForm
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'Timer1
-        '
-        '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(18, Byte), Integer))
@@ -185,6 +188,7 @@ Partial Class LoadingForm
         '
         'Panel3
         '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.Panel3.Controls.Add(Me.PictureBox3)
         Me.Panel3.Location = New System.Drawing.Point(275, 169)
@@ -204,6 +208,7 @@ Partial Class LoadingForm
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(286, 230)
@@ -214,6 +219,7 @@ Partial Class LoadingForm
         '
         'Panel4
         '
+        Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Location = New System.Drawing.Point(361, 169)
@@ -233,6 +239,7 @@ Partial Class LoadingForm
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(356, 230)
@@ -241,32 +248,15 @@ Partial Class LoadingForm
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "Customers"
         '
-        'Panel5
+        'Timer1
         '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.Label8)
-        Me.Panel5.Location = New System.Drawing.Point(184, 300)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(165, 29)
-        Me.Panel5.TabIndex = 6
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(6, 6)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(152, 16)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "Starting application..."
         '
         'LoadingForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(532, 371)
-        Me.Controls.Add(Me.Panel5)
+        Me.ClientSize = New System.Drawing.Size(532, 333)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel4)
@@ -295,8 +285,6 @@ Partial Class LoadingForm
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -312,7 +300,6 @@ Partial Class LoadingForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -320,6 +307,5 @@ Partial Class LoadingForm
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class
