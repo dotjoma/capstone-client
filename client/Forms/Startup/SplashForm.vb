@@ -1,5 +1,5 @@
 ﻿Imports System.Threading
-Public Class LoadingForm
+Public Class SplashForm
     Private count As Integer = 3
     Private Sub StartUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblYear.Text = Now.Year

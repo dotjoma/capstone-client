@@ -86,6 +86,18 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Loading\LoadingForm.Designer.vb">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Loading\LoadingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loading\OrderSkeleton.Designer.vb">
+      <DependentUpon>OrderSkeleton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Loading\OrderSkeleton.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -122,10 +134,10 @@
     <Compile Include="Forms\POSForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\POS\OrderForm.Designer.vb">
+    <Compile Include="Forms\POS\Order\OrderForm.Designer.vb">
       <DependentUpon>OrderForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\POS\OrderForm.vb">
+    <Compile Include="Forms\POS\Order\OrderForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\POS\ProductForm.Designer.vb">
@@ -157,10 +169,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Forms\Startup\LoadingForm.Designer.vb">
-      <DependentUpon>LoadingForm.vb</DependentUpon>
+    <Compile Include="Forms\Startup\SplashForm.Designer.vb">
+      <DependentUpon>SplashForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Startup\LoadingForm.vb">
+    <Compile Include="Forms\Startup\SplashForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\TcpConnection.vb" />
@@ -168,6 +180,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loading\LoadingForm.resx">
+      <DependentUpon>LoadingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loading\OrderSkeleton.resx">
+      <DependentUpon>OrderSkeleton.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -187,7 +205,7 @@
     <EmbeddedResource Include="Forms\POSForm.resx">
       <DependentUpon>POSForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\POS\OrderForm.resx">
+    <EmbeddedResource Include="Forms\POS\Order\OrderForm.resx">
       <DependentUpon>OrderForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\POS\ProductForm.resx">
@@ -202,8 +220,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Startup\LoadingForm.resx">
-      <DependentUpon>LoadingForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Startup\SplashForm.resx">
+      <DependentUpon>SplashForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -216,9 +234,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Gif\Drawing flower.gif" />
+    <Content Include="Resources\Gif\Floating rays.gif" />
     <Content Include="Resources\Icons\Back Arrow.png" />
     <Content Include="Resources\Icons\Bank.png" />
     <Content Include="Resources\Icons\Cardboard Box.png" />
@@ -244,6 +266,7 @@
     <Content Include="Resources\Icons\User Group.png" />
     <Content Include="Resources\Icons\User.png" />
     <Content Include="Resources\Icons\UserBR.png" />
+    <Content Include="Resources\Images\order-skeleton.png" />
     <Content Include="Resources\Images\ramen.png" />
     <Content Include="Resources\Logo\logo-no-bg.png" />
     <Content Include="Resources\Logo\logo.png" />

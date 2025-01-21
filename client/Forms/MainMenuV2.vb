@@ -24,6 +24,7 @@
     Private Sub btnPos_Click(sender As Object, e As EventArgs) Handles btnPos.Click
         Me.Hide()
         POSForm.Show()
+        POSForm.LoadProducts()
         ActiveButton(1)
     End Sub
 

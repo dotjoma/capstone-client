@@ -1,6 +1,7 @@
 ﻿Public Class OrderForm
     Private Sub OrderForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Example list of products
+        Timer.Start()
+        ' Mock data
         Dim products As New List(Of Product) From {
             New Product With {.Name = "Product 1", .Description = "This is the description for Product 1.", .Price = 10.99, .ImagePath = "E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\Resources\Images\ramen.png"},
             New Product With {.Name = "Product 2", .Description = "This is the description for Product 2.", .Price = 15.49, .ImagePath = "E:\Visual Studio 2013 Ultimate Projects\Capstone-Project\client\client\Resources\Images\ramen.png"},
@@ -24,6 +25,11 @@
         }
 
         ' Add the display to the form's controls
-        Me.Controls.Add(display)
+        pnlDisplay.Controls.Add(display)
+    End Sub
+
+    Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        lblDay.Text = DateTime.Now.ToString("dddd") & ", " & StrConv(DateTime.Now.ToString("hh:mm:ss tt"), VbStrConv.Uppercase)
+        lblDate.Text = DateTime.Now.ToString("MMMM dd, yyyy")
     End Sub
 End Class

@@ -11,7 +11,7 @@ Public Class LoginForm
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblYear.Text = Now.Year
         txtPassword.UseSystemPasswordChar = True
-        'serverThread = New Thread(AddressOf ConnectToServer)
+        ' serverThread = New Thread(AddressOf ConnectToServer)
         ' serverThread.IsBackground = True
         ' serverThread.Start()
     End Sub

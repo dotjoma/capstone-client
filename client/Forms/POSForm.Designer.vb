@@ -22,18 +22,23 @@ Partial Class POSForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(POSForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnProduct = New Guna.UI2.WinForms.Guna2Button()
         Me.btnOrder = New Guna.UI2.WinForms.Guna2Button()
         Me.btnBack = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.pnlHeaderWindow = New System.Windows.Forms.Panel()
+        Me.lblLoading = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.panels = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.pnlMainWindow = New System.Windows.Forms.Panel()
+        Me.bgWorker = New System.ComponentModel.BackgroundWorker()
+        Me.bgLoadingWorker = New System.ComponentModel.BackgroundWorker()
+        Me.tLoading = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlHeader.SuspendLayout()
+        Me.pnlHeaderWindow.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -100,16 +105,42 @@ Partial Class POSForm
         Me.btnBack.Size = New System.Drawing.Size(47, 43)
         Me.btnBack.TabIndex = 0
         '
-        'Panel2
+        'pnlHeader
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(75, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(940, 55)
-        Me.Panel2.TabIndex = 3
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.pnlHeaderWindow)
+        Me.pnlHeader.Controls.Add(Me.Label1)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(75, 0)
+        Me.pnlHeader.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(940, 52)
+        Me.pnlHeader.TabIndex = 3
+        '
+        'pnlHeaderWindow
+        '
+        Me.pnlHeaderWindow.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlHeaderWindow.BackColor = System.Drawing.SystemColors.Control
+        Me.pnlHeaderWindow.Controls.Add(Me.lblLoading)
+        Me.pnlHeaderWindow.Location = New System.Drawing.Point(0, 52)
+        Me.pnlHeaderWindow.Name = "pnlHeaderWindow"
+        Me.pnlHeaderWindow.Size = New System.Drawing.Size(940, 0)
+        Me.pnlHeaderWindow.TabIndex = 6
+        Me.pnlHeaderWindow.Visible = False
+        '
+        'lblLoading
+        '
+        Me.lblLoading.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblLoading.AutoSize = True
+        Me.lblLoading.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLoading.ForeColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.lblLoading.Location = New System.Drawing.Point(413, -74)
+        Me.lblLoading.Name = "lblLoading"
+        Me.lblLoading.Size = New System.Drawing.Size(114, 24)
+        Me.lblLoading.TabIndex = 3
+        Me.lblLoading.Text = "Loading..."
         '
         'Label1
         '
@@ -123,31 +154,27 @@ Partial Class POSForm
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Elicia's Garden POS"
         '
-        'panels
+        'pnlMainWindow
         '
-        Me.panels.BackColor = System.Drawing.Color.Gray
-        Me.panels.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panels.Location = New System.Drawing.Point(75, 55)
-        Me.panels.Name = "panels"
-        Me.panels.Size = New System.Drawing.Size(940, 76)
-        Me.panels.TabIndex = 4
+        Me.pnlMainWindow.BackColor = System.Drawing.SystemColors.Control
+        Me.pnlMainWindow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMainWindow.Location = New System.Drawing.Point(75, 52)
+        Me.pnlMainWindow.Name = "pnlMainWindow"
+        Me.pnlMainWindow.Size = New System.Drawing.Size(940, 615)
+        Me.pnlMainWindow.TabIndex = 4
         '
-        'Panel3
+        'bgWorker
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(745, 131)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(270, 536)
-        Me.Panel3.TabIndex = 5
+        Me.bgWorker.WorkerReportsProgress = True
+        Me.bgWorker.WorkerSupportsCancellation = True
         '
-        'pnlMain
+        'bgLoadingWorker
         '
-        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMain.Location = New System.Drawing.Point(75, 131)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(670, 536)
-        Me.pnlMain.TabIndex = 6
+        Me.bgLoadingWorker.WorkerReportsProgress = True
+        Me.bgLoadingWorker.WorkerSupportsCancellation = True
+        '
+        'tLoading
+        '
         '
         'POSForm
         '
@@ -155,10 +182,8 @@ Partial Class POSForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1015, 667)
-        Me.Controls.Add(Me.pnlMain)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.panels)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.pnlMainWindow)
+        Me.Controls.Add(Me.pnlHeader)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -166,18 +191,23 @@ Partial Class POSForm
         Me.Name = "POSForm"
         Me.Text = "POSForm"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pnlHeader.ResumeLayout(False)
+        Me.pnlHeader.PerformLayout()
+        Me.pnlHeaderWindow.ResumeLayout(False)
+        Me.pnlHeaderWindow.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents pnlHeader As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents panels As System.Windows.Forms.Panel
     Friend WithEvents btnBack As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents btnOrder As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnProduct As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents pnlMain As System.Windows.Forms.Panel
+    Friend WithEvents pnlMainWindow As System.Windows.Forms.Panel
+    Friend WithEvents bgWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents pnlHeaderWindow As System.Windows.Forms.Panel
+    Friend WithEvents bgLoadingWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents lblLoading As System.Windows.Forms.Label
+    Friend WithEvents tLoading As System.Windows.Forms.Timer
 End Class
